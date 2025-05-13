@@ -5,12 +5,34 @@
 }
 
 /* Body styling */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     color: #333;
     line-height: 1.6;
-    padding: 20px;
+    padding: 20px;    
+
+/* h1 segment */
+h1 {
+    background-color: #93d0f4;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+.Stock { 
+p {
+	color: #ddd;
+}
 }
 
-/* Add in your own customisations */
+
+/* footer */
+.footer {
+    background-color: #93d0f4;
+}
+
+
+
+
+
