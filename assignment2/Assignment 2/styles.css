@@ -25,11 +25,35 @@ p {
 	color: #ddd;
 }
 }
+/* table */
+table {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border-collapse: collapse
+}
+
+.Wikipedia {
+    color: #0079c1;
+a:hover {
+    color: #0079c1;
+}
+}
+.Facebook {
+    color: #0079c1;
+a:hover {
+    color: #0079c1;
+    }
+}
+
 
 
 /* footer */
-.footer {
+.reserved {
     background-color: #93d0f4;
+    text-align: center;
+    padding-top;: 10px
+    padding-bottom: 10px
 }
 
 
