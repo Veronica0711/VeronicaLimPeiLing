@@ -14,3 +14,5 @@ const disneyData = [
 ];
 
 // Write your code below
+const averagePrice = disneyData.reduce((sum, { close }) => sum + parseFloat(close), 0) / disneyData.length;
+console.log(`Average closing price of Disney is $${averagePrice.toFixed(2)}`);
