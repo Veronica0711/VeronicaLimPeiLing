@@ -1,0 +1,9 @@
+<script>
+const p = new Promise((resolve, reject) => {
+  reject("Error:oops!)");
+});
+
+p.then((value) => {
+  console.log(value);
+});
+</script>

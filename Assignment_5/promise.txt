@@ -1,0 +1,48 @@
+Question 1: 
+const p = Promise.resolve('resolved')
+//my code below
+const p = new Promise((resolve, reject) => {
+  resolve("resolved");
+});
+
+p.then((value) => {
+  console.log(value);
+});
+
+
+Question 2:
+const p = Promise.reject(new Error('Oops!'));
+//My code below
+
+
+
+
+
+
+
+Question 3:
+// Your code here
+
+Question 4:
+// Your code here
+
+Question 5:
+// Your code here
+
+Question 6:
+// Your code here
+
+Question 7:
+// Your code here
+
+Question 8:
+// Your code here
+
+Question 9:
+// Your code here
+
+Question 10:
+// Your code here
+
+Bonus Question:
+// Your code here
