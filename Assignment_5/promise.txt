@@ -1,5 +1,4 @@
-Question 1: 
-const p = Promise.resolve('resolved')
+Question 1: const p = Promise.resolve('resolved')
 //my code below to log the resolved value
 
 const p = new Promise((resolve, reject) => {
@@ -10,43 +9,61 @@ p.then((value) => {
 });
 
 
-Question 2: // to come back, this ans is wrong
-const p = Promise.reject(new Error('Oops!'));
+Question 2: const p = Promise.reject(new Error('Oops!'));
 //My code below to log the rejected reason 
 
 const p = new Promise((resolve, reject) => {
-  reject(new Error("oops!"));
+  reject(new Error("Oops!"));
 });
-p.then(value => {
-  console.log("Resolved:", value);
-}).catch(error => {
-  console.error("errorrror:", error.message);
+p.catch(error => {
+throw error;
 });
 
 
-Question 3:
-const p = Promise.resolve({ id: 1, name: 'Alice' });
-// My code below to log the resolved value to the console:
+Question 3:const p = Promise.resolve({ id: 1, name: 'Alice' });
+// My code below to log the resolved id and name to the console:
 
 const p = Promise.resolve({ id: 1, name: 'Alice' });
 p.then(value => {
   console.log(value);
 });
 
-Question 4:
-// Your code here
-const p = Promise.resolve({ id: 1, name: 'Alice' });
 
+Question 4:const p = Promise.resolve({ id: 1, name: 'Alice' });
+// My code below to log in name to the console
+
+const p = Promise.resolve({ id: 1, name: 'Alice' });
 p.then(({ name }) => {
   console.log(name);
 });
 
 
-Question 5:
-// Your code here
+Question 5:const p = Promise.reject(new Error('Invalid id'));
+// My code below
 
-Question 6:
-// Your code here
+const p = new Promise((resolve, reject) => {
+  throw new Error("oops!");
+});
+p.catch((error) => {
+ console.error(error);
+});
+
+
+Question 6: issue
+const p = Promise.resolve(42);
+// My code below to log in message after resolved
+
+const p = Promise.resolve(42);
+p.then(value => {
+    console.log("Resolved with:", value);
+  })
+p.catch(error => {
+    console.error("Error:", error);
+  })
+p.finally(() => {
+    console.log("Promise has settled.");
+  });
+
 
 Question 7:
 // Your code here
