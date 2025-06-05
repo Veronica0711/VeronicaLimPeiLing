@@ -13,10 +13,11 @@ Question 2: const p = Promise.reject(new Error('Oops!'));
 //My code below to log the rejected reason 
 
 const p = new Promise((resolve, reject) => {
-  reject(new Error("Oops!"));
+ throw new Error("Oops");
 });
-p.catch(error => {
-throw error;
+
+p.catch((error) =>  {
+  console.error(error);
 });
 
 
@@ -54,11 +55,8 @@ const p = Promise.resolve(42);
 // My code below to log in message after resolved
 
 const p = Promise.resolve(42);
-p.then(value => {
-    console.log("Resolved with:", value);
-  })
-p.catch(error => {
-    console.error("Error:", error);
+p.catch(resolve => {
+    console.log("resolve:", resolve);
   })
 p.finally(() => {
     console.log("Promise has settled.");
