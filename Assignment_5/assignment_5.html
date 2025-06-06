@@ -1,20 +1,9 @@
 <script>
-const p1 = Promise.resolve("calling next");
-
-const p2 = p1.catch((reason) => {
-  // This is never called
-  console.error("catch p1!");
-  console.error(reason);
+const p = Promise.reject(new Error('Invalid value'));
+p.catch(error => {
+  console.log("0:", error.message);
+  return 0;
+}).then(value => {
+  console.log("Recovered value:", value); // Logs: Recovered value: 0
 });
-
-p2.then(
-  (value) => {
-    console.log("next promise's onFulfilled");
-    console.log(value); // calling next
-  },
-  (reason) => {
-    console.log("next promise's onRejected");
-    console.log(reason);
-  },
-);
 </script>

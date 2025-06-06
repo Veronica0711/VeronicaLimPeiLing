@@ -40,19 +40,18 @@ p.then(({ name }) => {
 
 
 Question 5:const p = Promise.reject(new Error('Invalid id'));
-// My code below
+// My code below to log message Invalid id with error
 
 const p = new Promise((resolve, reject) => {
-  throw new Error("oops!");
+  throw new Error("Invalid id!");
 });
 p.catch((error) => {
  console.error(error);
 });
 
 
-Question 6: issue
-const p = Promise.resolve(42);
-// My code below to log in message after resolved
+Question 6: const p = Promise.resolve(42);
+// My code below to log in message Promise has settled after resolved
 
 const p = Promise.resolve(42);
 p.catch(resolve => {
@@ -63,11 +62,25 @@ p.finally(() => {
   });
 
 
-Question 7:
-// Your code here
+Question 7:const p = Promise.resolve(21);
+// My code below to transform the resolved value by doubling it and log the new value:
 
-Question 8:
-// Your code here
+const p = Promise.resolve(21);
+p.then(value => {
+  const doubled = value * 2;
+  console.log(doubled); 
+});
+
+Question 8:const p = Promise.reject(new Error('Invalid value'));
+// My code below to log in final value after rejection
+const p = Promise.reject(new Error('Invalid value'));
+p.catch(error => {
+  console.log("0:", error.message);
+  return 0;
+}).then(value => {
+  console.log("Recovered value:", value); // Logs: Recovered value: 0
+});
+
 
 Question 9:
 // Your code here
