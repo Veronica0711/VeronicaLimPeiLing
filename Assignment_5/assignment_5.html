@@ -1,9 +1,12 @@
 <script>
-const p = Promise.reject(new Error('Invalid value'));
-p.catch(error => {
-  console.log("0:", error.message);
-  return 0;
-}).then(value => {
-  console.log("Recovered value:", value); // Logs: Recovered value: 0
+const promises = [
+  Promise.resolve(1),
+  Promise.resolve(2),
+  Promise.resolve(3)
+];
+
+Promise.all(promises).then(results => {
+  console.log(results); 
 });
+
 </script>

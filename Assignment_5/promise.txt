@@ -73,20 +73,30 @@ p.then(value => {
 
 Question 8:const p = Promise.reject(new Error('Invalid value'));
 // My code below to log in final value after rejection
-const p = Promise.reject(new Error('Invalid value'));
-p.catch(error => {
-  console.log("0:", error.message);
-  return 0;
-}).then(value => {
-  console.log("Recovered value:", value); // Logs: Recovered value: 0
-});
+Promise.reject(new Error('Invalid value'))
+  .catch(() => 0)
+  .then(result => {
+    console.log(result); 
+  });
 
 
 Question 9:
+// My code below using Promise.all() to log an array of the resolved values
+const promises = [
+  Promise.resolve(1),
+  Promise.resolve(2),
+  Promise.resolve(3)
+];
+
+Promise.all(promises).then(results => {
+  console.log(results); 
+});
+
+
+
+
+Question 10: dont understand the question
 // Your code here
 
-Question 10:
-// Your code here
-
-Bonus Question:
+Bonus Question: dont understand the question 
 // Your code here
