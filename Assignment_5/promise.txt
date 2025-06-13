@@ -1,0 +1,102 @@
+Question 1: const p = Promise.resolve('resolved')
+//my code below to log the resolved value
+
+const p = new Promise((resolve, reject) => {
+  resolve("resolved");
+});
+p.then((value) => {
+  console.log(value);
+});
+
+
+Question 2: const p = Promise.reject(new Error('Oops!'));
+//My code below to log the rejected reason 
+
+const p = new Promise((resolve, reject) => {
+ throw new Error("Oops");
+});
+
+p.catch((error) =>  {
+  console.error(error);
+});
+
+
+Question 3:const p = Promise.resolve({ id: 1, name: 'Alice' });
+// My code below to log the resolved id and name to the console:
+
+const p = Promise.resolve({ id: 1, name: 'Alice' });
+p.then(value => {
+  console.log(value);
+});
+
+
+Question 4:const p = Promise.resolve({ id: 1, name: 'Alice' });
+// My code below to log in name to the console
+
+const p = Promise.resolve({ id: 1, name: 'Alice' });
+p.then(({ name }) => {
+  console.log(name);
+});
+
+
+Question 5:const p = Promise.reject(new Error('Invalid id'));
+// My code below to log message Invalid id with error
+
+const p = new Promise((resolve, reject) => {
+  throw new Error("Invalid id!");
+});
+p.catch((error) => {
+ console.error(error);
+});
+
+
+Question 6: const p = Promise.resolve(42);
+// My code below to log in message Promise has settled after resolved
+
+const p = Promise.resolve(42);
+p.catch(resolve => {
+    console.log("resolve:", resolve);
+  })
+p.finally(() => {
+    console.log("Promise has settled.");
+  });
+
+
+Question 7:const p = Promise.resolve(21);
+// My code below to transform the resolved value by doubling it and log the new value:
+
+const p = Promise.resolve(21);
+p.then(value => {
+  const doubled = value * 2;
+  console.log(doubled); 
+});
+
+Question 8:const p = Promise.reject(new Error('Invalid value'));
+// My code below to log in final value after rejection
+Promise.reject(new Error('Invalid value'))
+  .catch(() => 0)
+  .then(result => {
+    console.log(result); 
+  });
+
+
+Question 9:
+// My code below using Promise.all() to log an array of the resolved values
+const promises = [
+  Promise.resolve(1),
+  Promise.resolve(2),
+  Promise.resolve(3)
+];
+
+Promise.all(promises).then(results => {
+  console.log(results); 
+});
+
+
+
+
+Question 10: dont understand the question
+// Your code here
+
+Bonus Question: dont understand the question 
+// Your code here
