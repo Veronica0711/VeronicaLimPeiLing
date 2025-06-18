@@ -16,8 +16,31 @@ function BlogPost(props) {
     </div>
 )
 }
-function BlogList() {
-const blogPosts = [
+function BlogList({ posts }) {
+  return (
+    <div>
+      {posts.map((post, index) =>
+        post.isPrivate ? (
+          <PrivateBlogPost
+            key={index}
+            title={post.title}
+            author={post.author}
+            date={post.date}
+          />
+        ) : (
+          <BlogPost
+            key={index}
+            title={post.title}
+            author={post.author}
+            date={post.date}
+            content={post.content}
+          />
+        )
+      )}
+    </div>
+  );
+}
+  const blogPosts = [
     {
       title: 'My First Blog Post',
       author: 'John Doe',
@@ -54,15 +77,15 @@ const blogPosts = [
       isPrivate: false
     }
 ];
+function PrivateBlogPost(props) {
+ return(
+    <div className="private-posts">
+      <h3>{props.title}</h3>
+      <p><em>By {props.author} on {props.date} </em></p>
+      <p>The content of this post is private</p>
+    </div>
+)    
 }
-function PublicBlogPost() {
-
-}
-
-function PrivateBlogPost() {
-
-}
-
 function Footer(props) {
 return (
   <footer>
@@ -70,7 +93,6 @@ return (
   </footer>
 )
 };
-
 function App() {
       const currentYear = new Date().getFullYear();
       const blogPosts = [
@@ -110,21 +132,11 @@ function App() {
       isPrivate: false
     }
   ];
-      
 return (
   <div>
     <Header/>
-    <BlogList/>
-        {blogPosts.map((post, index) => (
-        <BlogPost
-          key={index}
-          title={post.title}
-          author={post.author}
-          date={post.date}
-          content={post.content}
-        />     
-      ))}
-      <Footer year={currentYear} />
+    <BlogList posts={blogPosts} />    
+    <Footer year={currentYear} />
     </div>
 );
 }
