@@ -72,8 +72,8 @@ return (
 };
 
 function App() {
-   const currentYear = new Date().getFullYear();
-   const blogPosts = [
+      const currentYear = new Date().getFullYear();
+      const blogPosts = [
     {
       title: 'My First Blog Post',
       author: 'John Doe',
@@ -110,20 +110,21 @@ function App() {
       isPrivate: false
     }
   ];
+      
 return (
   <div>
     <Header/>
-    <Footer year={currentYear} />
     <BlogList/>
-         {blogPosts.map((post, index) => (
+        {blogPosts.map((post, index) => (
         <BlogPost
           key={index}
           title={post.title}
           author={post.author}
           date={post.date}
           content={post.content}
-        />
+        />     
       ))}
+      <Footer year={currentYear} />
     </div>
 );
 }
